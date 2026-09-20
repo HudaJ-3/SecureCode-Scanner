@@ -29,3 +29,8 @@ jobs:
 
       - name: Run SAST scan
         run: bandit -r scanner.py
+
+      - name: Dependency security scan
+        run: |
+          pip install pip-audit
+          pip-audit -r requirements.txt
